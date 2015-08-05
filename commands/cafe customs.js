@@ -1,10 +1,27 @@
-Settings.addPermissions(['plug', 'info', 'notarealcafe']);
+Settings.addPermissions(['plug', 'info', 'notarealcafe', 'website', 'doeszalmmakegoodrobots']);
 
 exports.commands = {
 	plug: function (arg, by, room, cmd) {
 		var text = "Our plug dj room: https://plug.dj/cafelewow/";
 		if (!this.isRanked('+')) {
 			this.pmReply(text);
+		} else {
+			this.reply(text);
+		}
+	},
+	website: function (arg, by, room, cmd) {
+		var text = "Our Cafe menu: http://cafe-le-wow.weebly.com/";
+		if (!this.isRanked('+')) {
+			this.pmReply(text);
+		} else {
+			this.reply(text);
+		}
+	},
+	doeszalmmakegoodrobots: function (arg, by, room, cmd) {
+		var text = "";
+		var text1 = ""
+		if (!this.isRanked('+')) {
+			this.pmReply(text1);
 		} else {
 			this.reply(text);
 		}
