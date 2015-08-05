@@ -1,4 +1,4 @@
-Settings.addPermissions(['plug', 'info', 'notarealcafe', 'website', 'doeszalmmakegoodrobots']);
+Settings.addPermissions(['plug', 'info', 'notarealcafe', 'website', 'doeszalmmakegoodrobots', menu]);
 
 exports.commands = {
 	plug: function (arg, by, room, cmd) {
@@ -22,6 +22,14 @@ exports.commands = {
 		var text1 = ""
 		if (!this.isRanked('+')) {
 			this.pmReply(text1);
+		} else {
+			this.reply(text);
+		}
+	},
+	menu: function (arg, by, room, cmd) {
+		var text = "Chosen menu for this week: http://pastebin.com";
+		if (!this.isRanked('+')) {
+			this.pmReply(text);
 		} else {
 			this.reply(text);
 		}
