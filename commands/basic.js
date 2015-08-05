@@ -15,7 +15,7 @@ exports.commands = {
 	credits: 'about',
 	bot: 'about',
 	about: function (arg, by, room, cmd) {
-		var text = this.trad('about') + " (https://github.com/Ecuacion/Pokemon-Showdown-Node-Bot)";
+		var text = "Hi! This is cafe le wow's bot, currently in the make. More commands will be added in the future!";
 		if (!this.isRanked('#')) {
 			this.pmReply(text);
 		} else {

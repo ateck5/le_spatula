@@ -43,8 +43,6 @@ var saveQuotes = function () {
 Settings.addPermissions(['quote']);
 
 exports.commands = {
-	randomjoke: 'quote',
-	joke: 'quote',
 	randomquote: 'quote',
 	quote: function (arg, by, room, cmd) {
 		if (arg) {
@@ -70,7 +68,7 @@ exports.commands = {
 		this.restrictReply(quotes[rand], 'quote');
 	},
 	setquote: function (arg, by, room, cmd) {
-		if (!this.isRanked('~')) return false;
+		if (!this.isRanked('@')) return false;
 		if (!CommandParser.tempVar) {
 			return this.reply(this.trad('notemp'));
 		}
@@ -87,7 +85,7 @@ exports.commands = {
 		this.reply(text);
 	},
 	delquote: function (arg, by, room, cmd) {
-		if (!this.isRanked('~')) return false;
+		if (!this.isRanked('@')) return false;
 		var quoteId = toId(arg);
 		if (!quotes[quoteId]) return this.reply(this.trad('q') + ' "' + quoteId + '" ' + this.trad('n'));
 		delete quotes[quoteId];
@@ -102,7 +100,7 @@ exports.commands = {
 			if (!quotes[quoteId]) return this.restrictReply(this.trad('q') + ' "' + quoteId + '" ' + this.trad('n'), 'quote');
 			return this.reply(quotes[quoteId]);
 		}
-		if (!this.isRanked('~')) return false;
+		if (!this.isRanked('@')) return false;
 		var data = '';
 		for (var i in quotes) {
 			data += i + ' -> ' + quotes[i] + '\n';
@@ -114,7 +112,7 @@ exports.commands = {
 		}.bind(this));
 	},
 	addquotes: function (arg, by, room, cmd) {
-		if (!this.isRanked('~')) return false;
+		if (!this.isRanked('@') || !this.by ==='Zalm') return false;
 		if (!arg) return false;
 		var link = arg.trim();
 		if (!link) return false;
